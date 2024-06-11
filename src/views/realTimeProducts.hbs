@@ -1,0 +1,32 @@
+<div class="viewsFormProducts">
+  <h1 id="cabecera">GESTION DE PRODUCTOS</h1>
+  <br />
+  <input type="text" placeholder="Title" id="title" />
+  <input type="text" placeholder="Price" id="price" />
+  <input type="text" placeholder="Description" id="description" />
+  <input type="text" placeholder="Code" id="code" />
+  <input type="number" placeholder="Stock" id="stock" />
+  <button id="addProduct">Agregar Producto</button>
+  <ul id="productList">
+    {{#each products}}
+      <li data-id="{{id}}">
+        <strong>Id:</strong>
+        {{id}},
+        <strong>Title:</strong>
+        {{title}},
+        <strong>Price:</strong>
+        {{price}},
+        <strong>Description:</strong>
+        {{description}},
+        <strong>Code:</strong>
+        {{code}},
+        <strong>Stock:</strong>
+        {{stock}}
+        <button class="deleteProduct" data-id="{{id}}">Borrar</button>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="main.js"></script>

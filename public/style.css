@@ -1,0 +1,146 @@
+/* Estilos para la lista de productos */
+
+.viewsListIndex {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.viewsListIndex #cabecera {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  color: black;
+}
+
+.viewsListIndex h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-item {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+}
+
+.product-item h3 {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+}
+
+.product-item .card-price,
+.product-item .card-description,
+.product-item .card-code,
+.product-item .card-stock {
+  padding: 10px;
+  margin: 0;
+  border-top: 1px solid #ccc;
+}
+
+.product-item .card-price {
+  font-size: 1.2em;
+  color: green;
+}
+
+.product-item .card-code {
+  font-style: italic;
+}
+
+.product-item .card-stock {
+  color: blue;
+}
+
+/* stylos para la gestion de productos */
+
+.viewsFormProducts {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.viewsFormProducts h1 {
+  text-align: center;
+}
+
+.viewsFormProducts #cabecera {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  color: black;
+}
+
+.viewsFormProducts input[type="text"],
+.viewsFormProducts input[type="number"] {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.viewsFormProducts button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.viewsFormProducts button:hover {
+  background-color: #0056b3;
+}
+
+#productList {
+  list-style: none;
+  padding: 0;
+}
+
+#productList li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#productList li button.deleteProduct {
+  /* width: 100px; */
+  margin-top: 20px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#productList li button.deleteProduct:hover {
+  background-color: #c82333;
+}

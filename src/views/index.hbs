@@ -1,0 +1,17 @@
+<div class="viewsListIndex">
+  <h1 id="cabecera">PRODUCTOS</h1>
+  <br />
+  <div class="product-container">
+    {{#each products}}
+      <div class="card product-item">
+        <h3 class="card-title title">{{title}}</h3>
+        <p class="card-price price">$ {{price}}</p>
+        <p class="card-description description">{{description}}</p>
+        <p class="card-code code">Code: {{code}}</p>
+        <p class="card-stock stock">stock: {{stock}}</p>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>

@@ -1,29 +1,34 @@
 [
   {
     "id": 1,
-    "title": "Prducto 1",
-    "price": "200",
-    "description": "Nuevo producto",
-    "thumbnail": "image",
-    "code": "a10",
-    "stock": "10"
+    "title": "AGUA MINERAL",
+    "price": "2000",
+    "description": "Agua mineral del sur",
+    "code": "AG25",
+    "stock": "24679"
+  },
+  {
+    "id": 2,
+    "title": "YERBA MATE",
+    "price": "3453",
+    "description": "Yerba mate misionera con palo",
+    "code": "YB24",
+    "stock": "14789"
   },
   {
     "id": 3,
-    "title": "Prducto 3",
-    "price": "300",
-    "description": "Nuevo producto",
-    "thumbnail": "image",
-    "code": "a30",
-    "stock": "30"
+    "title": "JABON LIQUIDO",
+    "price": "1000",
+    "description": "Jabon para tocador",
+    "code": "JB20",
+    "stock": "21298"
   },
   {
     "id": 4,
-    "title": "Prducto 4",
-    "price": "400",
-    "description": "Nuevo producto",
-    "thumbnail": "image",
-    "code": "a40",
-    "stock": "40"
+    "title": "JABON LUX",
+    "price": "200",
+    "description": "Jabon para manos",
+    "code": "JB28",
+    "stock": "2000"
   }
 ]

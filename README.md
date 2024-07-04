@@ -44,17 +44,17 @@ $ npm start
 ```bash
 ../api/products/productID --> Modifica el producto con el ID seleccionado.
 
-..api/carts/cartID --> Modifica el Carrito con el ID seleccionado.
+../api/carts/cartID --> Modifica el Carrito con el ID seleccionado.
 ../api/carts/cartID/products/productID --> Modifica la cantidad del producto con el ID seleccionado.
 ```
 
 ## Endpoints DELETE
 
 ```bash
-..api/products/productID --> Elimina el producto con el ID seleccionado.
+../api/products/productID --> Elimina el producto con el ID seleccionado.
 
-..api/carts/cartID/product/productID --> Elimina el producto con el ID seleccionado del Carrito.
-..api/carts/cartID --> Elimina el carrito con el ID seleccionado.
+../api/carts/cartID/product/productID --> Elimina el producto con el ID seleccionado del Carrito.
+../api/carts/cartID --> Elimina el carrito con el ID seleccionado.
 ```
 
 ## Built Using

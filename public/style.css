@@ -52,6 +52,7 @@
 
 .product-item .card-price,
 .product-item .card-description,
+.product-item .card-category, 
 .product-item .card-code,
 .product-item .card-stock {
   padding: 10px;
@@ -143,4 +144,24 @@
 
 #productList li button.deleteProduct:hover {
   background-color: #c82333;
+}
+
+.pagination {
+  font-family: sans-serif;
+  text-align: center;
+  color: black;
+}
+
+.pagination a {
+  font-family: sans-serif;
+  text-decoration: none;
+  color : black;
+}
+
+.pagination button {
+  font-family: sans-serif;
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+  margin-right: 20px;
 }

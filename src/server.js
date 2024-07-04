@@ -7,10 +7,15 @@ import handlebars from "express-handlebars"
 import { Server } from "socket.io"
 import viewsRoute from "./routes/views.routes.js"
 import ProductManager from "./controller/ProductManager.js"
+import mongoose from "mongoose"
 
 const app = express()
 
 const PORT = 5000;
+
+mongoose.connect(`mongodb+srv://DBshop:DBshopGM@dbshop.xeqnc7g.mongodb.net/?retryWrites=true&w=majority&appName=DBshop`)
+.then(() => console.log('Connected to MongoDB'))
+.catch(err => console.error('Error connecting to MongoDB:', err));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
@@ -18,7 +23,11 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 
 app.engine('hbs', handlebars.engine({
     extname: 'hbs',
-    defaultLayout: 'main'
+    defaultLayout: 'main',
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true,
+        allowProtoMethodsByDefault: true,
+    }
 }))
 
 app.set('view engine', 'hbs')
@@ -30,7 +39,7 @@ app.use("/", viewsRoute)
 
 
 const httpServer = app.listen(PORT, () => {
-    console.log(`servidor up http://localhost:${PORT}`)
+    console.log(`server up http://localhost:${PORT}`)
 })
 
 const io = new Server(httpServer)
@@ -54,9 +63,9 @@ io.on('connection', (socket) => {
         }        
     });
 
-    socket.on('deleteProduct', async (productId) => {
+    socket.on('deleteProduct', async (id) => {
         try {
-            await productManager.deleteProduct(productId);
+            await productManager.deleteProduct(id);
             const products = await productManager.getProducts();
             io.emit('updateProducts', products);
         } catch (error) {

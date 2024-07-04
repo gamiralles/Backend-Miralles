@@ -1,64 +1,69 @@
-import { promises as fs } from 'fs';
-import path from 'path';
 import __dirname from '../dirname.js';
+import Product from '../models/product.model.js';
+
 
 class ProductManager {
-  constructor() {
-    this.path = path.resolve(__dirname, "./data/products.json");
-  }
+
+  async addProduct(product) {
+    try {
+      const newProduct = new Product(product);
+      await newProduct.save();
+      return newProduct;
+    }catch(error) {
+      console.log(`Error adding product: ${error}`);
+    }
+  } 
 
   async getProducts() {
     try {
-      const data = await fs.readFile(this.path, 'utf-8');
-      return JSON.parse(data);  
+      const data = await Product.find().lean();
+      return data;
     }catch(error) {
-      return [];
+      console.log(`Error getting products: ${error}`);
     }
   }
 
-  async saveProducts(products) {
-    await fs.writeFile(this.path, JSON.stringify(products, null, 2));
-  }
-
-  async addProduct(product) {
-    const { title, price, description, thumbnail, code, stock } = product;
-
-    if(!title || !price || !description || !code || !stock) {
-      console.log("son campos obligatorios");
-      return;
+  async getPaginatedProducts(page = 1, limit = 10) {
+    try {
+      const options = {
+        page,
+        limit,
+        lean: true
+    };
+    const products = await Product.paginate({}, options);
+    return products;
+    }catch(error) {
+      console.log(`Error getting products: ${error}`);
     }
-
-    const products = await this.getProducts();
-    const newId = products.length > 0 ? products[products.length - 1].id + 1 : 1 ;
-    const newProduct = { id: newId, title, price, description, thumbnail, code, stock}
-
-      products.push(newProduct);
-      await this.saveProducts(products)
-      return;
   }
 
   async getProductById(id) {
-    const product = await this.getProducts()
-    return product.find(product => product.id === id);
+    try {
+      const product = await Product.findById(id);
+      return product;
+    }catch(error) {
+      console.log(`Error getting product by id: ${error}`);
+    }
   }
 
   async updateProduct(id, updatedProduct) {
-    const products = await this.getProducts();
-    const index = products.findIndex(product => product.id === id);
-    if(index === -1)return null;
-
-    products[index] = {...products[index], ...updatedProduct};
-    await this.saveProducts(products);
-    return products[index]
-  }
+    try {
+        const options = { new: true };
+        const product = await Product.findByIdAndUpdate(id, updatedProduct, options);
+        return product;
+    } catch (error) {
+        console.log(`Error updating product: ${error}`);
+        throw error; // Asegúrate de lanzar el error para manejarlo adecuadamente
+    }
+}
 
   async deleteProduct(id) {
-    const products = await this.getProducts();
-    const index = products.findIndex(product => product.id === id);
-    if (index === -1)return null;
-    const deletedProduct = products.splice(index, 1)
-    await this.saveProducts(products)
-    return deletedProduct[0];
+    try {
+      const product = await Product.findByIdAndDelete(id);
+      return product;
+    }catch(error) {
+      console.log(`Error deleting product: ${error}`);
+    }
   }
 }
 

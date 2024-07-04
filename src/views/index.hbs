@@ -1,17 +1,35 @@
 <div class="viewsListIndex">
-  <h1 id="cabecera">PRODUCTOS</h1>
+  <h1 id="cabecera">CATALOGO DE PRODUCTOS</h1>
   <br />
   <div class="product-container">
     {{#each products}}
       <div class="card product-item">
         <h3 class="card-title title">{{title}}</h3>
         <p class="card-price price">$ {{price}}</p>
+        <p class="card-category category">Category: {{category}}</p>
         <p class="card-description description">{{description}}</p>
         <p class="card-code code">Code: {{code}}</p>
         <p class="card-stock stock">stock: {{stock}}</p>
       </div>
     {{/each}}
   </div>
+</div>
+
+<div class="pagination">
+  {{#if hasPrevPage}}
+    <button>
+      <a href="/products?page={{prevPage}}&limit={{limit}}">Previous</a>
+    </button>
+  {{/if}}
+  Page
+  {{page}}
+  of
+  {{totalPages}}
+  {{#if hasNextPage}}
+  <button>
+    <a href="/products?page={{nextPage}}&limit={{limit}}">Next</a>
+  </button>
+  {{/if}}
 </div>
 
 <script src="/socket.io/socket.io.js"></script>

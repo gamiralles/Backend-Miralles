@@ -1,34 +1,802 @@
 [
   {
-    "id": 1,
-    "title": "AGUA MINERAL",
-    "price": "2000",
-    "description": "Agua mineral del sur",
-    "code": "AG25",
-    "stock": "24679"
+    "title": "Leche Entera",
+    "category": "Lácteos",
+    "code": "LA001",
+    "description": "Leche entera de 1 litro",
+    "price": 250,
+    "stock": 50
   },
   {
-    "id": 2,
-    "title": "YERBA MATE",
-    "price": "3453",
-    "description": "Yerba mate misionera con palo",
-    "code": "YB24",
-    "stock": "14789"
+    "title": "Yogur Natural",
+    "category": "Lácteos",
+    "code": "LA002",
+    "description": "Yogur natural de 500g",
+    "price": 150,
+    "stock": 30
   },
   {
-    "id": 3,
-    "title": "JABON LIQUIDO",
-    "price": "1000",
-    "description": "Jabon para tocador",
-    "code": "JB20",
-    "stock": "21298"
+    "title": "Queso Rallado",
+    "category": "Lácteos",
+    "code": "LA003",
+    "description": "Queso rallado de 100g",
+    "price": 200,
+    "stock": 40
   },
   {
-    "id": 4,
-    "title": "JABON LUX",
-    "price": "200",
-    "description": "Jabon para manos",
-    "code": "JB28",
-    "stock": "2000"
+    "title": "Manteca",
+    "category": "Lácteos",
+    "code": "LA004",
+    "description": "Manteca de 200g",
+    "price": 180,
+    "stock": 20
+  },
+  {
+    "title": "Pan Integral",
+    "category": "Panadería",
+    "code": "PA001",
+    "description": "Pan integral de 500g",
+    "price": 120,
+    "stock": 60
+  },
+  {
+    "title": "Medialunas",
+    "category": "Panadería",
+    "code": "PA002",
+    "description": "Medialunas de manteca (docena)",
+    "price": 450,
+    "stock": 25
+  },
+  {
+    "title": "Galletas de Arroz",
+    "category": "Panadería",
+    "code": "PA003",
+    "description": "Paquete de galletas de arroz de 200g",
+    "price": 100,
+    "stock": 35
+  },
+  {
+    "title": "Fideos Spaghetti",
+    "category": "Almacén",
+    "code": "AL001",
+    "description": "Fideos spaghetti de 500g",
+    "price": 80,
+    "stock": 70
+  },
+  {
+    "title": "Arroz",
+    "category": "Almacén",
+    "code": "AL002",
+    "description": "Paquete de arroz de 1kg",
+    "price": 90,
+    "stock": 80
+  },
+  {
+    "title": "Lentejas",
+    "category": "Almacén",
+    "code": "AL003",
+    "description": "Paquete de lentejas de 500g",
+    "price": 75,
+    "stock": 55
+  },
+  {
+    "title": "Atún en Lata",
+    "category": "Conservas",
+    "code": "CO001",
+    "description": "Lata de atún en aceite de 170g",
+    "price": 220,
+    "stock": 40
+  },
+  {
+    "title": "Tomates en Conserva",
+    "category": "Conservas",
+    "code": "CO002",
+    "description": "Lata de tomates en conserva de 400g",
+    "price": 110,
+    "stock": 50
+  },
+  {
+    "title": "Duraznos en Almíbar",
+    "category": "Conservas",
+    "code": "CO003",
+    "description": "Lata de duraznos en almíbar de 820g",
+    "price": 250,
+    "stock": 30
+  },
+  {
+    "title": "Jabón en Barra",
+    "category": "Limpieza",
+    "code": "LI001",
+    "description": "Jabón en barra para lavarropas de 200g",
+    "price": 60,
+    "stock": 100
+  },
+  {
+    "title": "Detergente Líquido",
+    "category": "Limpieza",
+    "code": "LI002",
+    "description": "Detergente líquido para platos de 500ml",
+    "price": 80,
+    "stock": 75
+  },
+  {
+    "title": "Desinfectante",
+    "category": "Limpieza",
+    "code": "LI003",
+    "description": "Desinfectante multiuso de 1 litro",
+    "price": 150,
+    "stock": 50
+  },
+  {
+    "title": "Shampú",
+    "category": "Higiene",
+    "code": "HI001",
+    "description": "Shampú para cabello normal de 400ml",
+    "price": 200,
+    "stock": 40
+  },
+  {
+    "title": "Pasta Dental",
+    "category": "Higiene",
+    "code": "HI002",
+    "description": "Pasta dental con flúor de 90g",
+    "price": 120,
+    "stock": 60
+  },
+  {
+    "title": "Desodorante",
+    "category": "Higiene",
+    "code": "HI003",
+    "description": "Desodorante en aerosol de 150ml",
+    "price": 180,
+    "stock": 35
+  },
+  {
+    "title": "Papel Higiénico",
+    "category": "Higiene",
+    "code": "HI004",
+    "description": "Paquete de papel higiénico de 4 rollos",
+    "price": 130,
+    "stock": 80
+  },
+  {
+    "title": "Manzanas",
+    "category": "Frutas y Verduras",
+    "code": "FV001",
+    "description": "Manzanas rojas (1kg)",
+    "price": 180,
+    "stock": 90
+  },
+  {
+    "title": "Bananas",
+    "category": "Frutas y Verduras",
+    "code": "FV002",
+    "description": "Bananas (1kg)",
+    "price": 150,
+    "stock": 70
+  },
+  {
+    "title": "Zanahorias",
+    "category": "Frutas y Verduras",
+    "code": "FV003",
+    "description": "Zanahorias (1kg)",
+    "price": 100,
+    "stock": 80
+  },
+  {
+    "title": "Tomates",
+    "category": "Frutas y Verduras",
+    "code": "FV004",
+    "description": "Tomates (1kg)",
+    "price": 200,
+    "stock": 65
+  },
+  {
+    "title": "Pollo Entero",
+    "category": "Carnes",
+    "code": "CA001",
+    "description": "Pollo entero (1.5kg)",
+    "price": 600,
+    "stock": 50
+  },
+  {
+    "title": "Carne Molida",
+    "category": "Carnes",
+    "code": "CA002",
+    "description": "Carne molida de vaca (1kg)",
+    "price": 900,
+    "stock": 40
+  },
+  {
+    "title": "Filet de Merluza",
+    "category": "Pescados",
+    "code": "PE001",
+    "description": "Filet de merluza (1kg)",
+    "price": 800,
+    "stock": 30
+  },
+  {
+    "title": "Cerveza",
+    "category": "Bebidas",
+    "code": "BE001",
+    "description": "Cerveza rubia en lata de 473ml",
+    "price": 130,
+    "stock": 100
+  },
+  {
+    "title": "Vino Tinto",
+    "category": "Bebidas",
+    "code": "BE002",
+    "description": "Vino tinto malbec de 750ml",
+    "price": 500,
+    "stock": 60
+  },
+  {
+    "title": "Agua Mineral",
+    "category": "Bebidas",
+    "code": "BE003",
+    "description": "Agua mineral sin gas de 1.5 litros",
+    "price": 80,
+    "stock": 90
+  },
+  {
+    "title": "Gaseosa",
+    "category": "Bebidas",
+    "code": "BE004",
+    "description": "Gaseosa cola de 2 litros",
+    "price": 250,
+    "stock": 80
+  },
+  {
+    "title": "Café",
+    "category": "Almacén",
+    "code": "AL004",
+    "description": "Paquete de café molido de 250g",
+    "price": 350,
+    "stock": 40
+  },
+  {
+    "title": "Té en Saquitos",
+    "category": "Almacén",
+    "code": "AL005",
+    "description": "Caja de té en saquitos (50 unidades)",
+    "price": 150,
+    "stock": 55
+  },
+  {
+    "title": "Aceite de Girasol",
+    "category": "Almacén",
+    "code": "AL006",
+    "description": "Botella de aceite de girasol de 1 litro",
+    "price": 300,
+    "stock": 70
+  },
+  {
+    "title": "Harina de Trigo",
+    "category": "Almacén",
+    "code": "AL007",
+    "description": "Paquete de harina de trigo de 1kg",
+    "price": 90,
+    "stock": 75
+  },
+  {
+    "title": "Sal Fina",
+    "category": "Almacén",
+    "code": "AL008",
+    "description": "Paquete de sal fina de 500g",
+    "price": 40,
+    "stock": 100
+  },
+  {
+    "title": "Azúcar",
+    "category": "Almacén",
+    "code": "AL009",
+    "description": "Paquete de azúcar de 1kg",
+    "price": 80,
+    "stock": 85
+  },
+  {
+    "title": "Levadura en Polvo",
+    "category": "Almacén",
+    "code": "AL010",
+    "description": "Paquete de levadura en polvo de 100g",
+    "price": 50,
+    "stock": 65
+  },
+  {
+    "title": "Papas Fritas",
+    "category": "Snacks",
+    "code": "SN001",
+    "description": "Paquete de papas fritas de 100g",
+    "price": 150,
+    "stock": 60
+  },
+  {
+    "title": "Galletitas Dulces",
+    "category": "Snacks",
+    "code": "SN002",
+    "description": "Paquete de galletitas dulces de 200g",
+    "price": 130,
+    "stock": 75
+  },
+  {
+    "title": "Chocolates",
+    "category": "Snacks",
+    "code": "SN003",
+    "description": "Tableta de chocolate de 100g",
+    "price": 220,
+    "stock": 50
+  },
+  {
+    "title": "Helado de Crema",
+    "category": "Postres",
+    "code": "PO001",
+    "description": "Pote de helado de crema de 1 litro",
+    "price": 450,
+    "stock": 25
+  },
+  {
+    "title": "Dulce de Leche",
+    "category": "Postres",
+    "code": "PO002",
+    "description": "Pote de dulce de leche de 400g",
+    "price": 250,
+    "stock": 40
+  },
+  {
+    "title": "Flan",
+    "category": "Postres",
+    "code": "PO003",
+    "description": "Paquete de flan en polvo de 100g",
+    "price": 70,
+    "stock": 50
+  },
+  {
+    "title": "Mermelada",
+    "category": "Postres",
+    "code": "PO004",
+    "description": "Frasco de mermelada de durazno de 400g",
+    "price": 180,
+    "stock": 30
+  },
+  {
+    "title": "Turrón",
+    "category": "Navidad",
+    "code": "NA001",
+    "description": "Turrón blando de almendra de 200g",
+    "price": 350,
+    "stock": 15
+  },
+  {
+    "title": "Pan Dulce",
+    "category": "Navidad",
+    "code": "NA002",
+    "description": "Pan dulce con frutas de 500g",
+    "price": 450,
+    "stock": 20
+  },
+  {
+    "title": "Sidra",
+    "category": "Navidad",
+    "code": "NA003",
+    "description": "Botella de sidra de 750ml",
+    "price": 300,
+    "stock": 35
+  },
+  {
+    "title": "Frutas Secas",
+    "category": "Navidad",
+    "code": "NA004",
+    "description": "Paquete de frutas secas de 200g",
+    "price": 400,
+    "stock": 25
+  },
+  {
+    "title": "Helado de Frutilla",
+    "category": "Postres",
+    "code": "PO005",
+    "description": "Pote de helado de frutilla de 1 litro",
+    "price": 450,
+    "stock": 20
+  },
+  {
+    "title": "Jamón Cocido",
+    "category": "Fiambres",
+    "code": "FI001",
+    "description": "Jamón cocido de 200g",
+    "price": 300,
+    "stock": 50
+  },
+  {
+    "title": "Queso Cremoso",
+    "category": "Fiambres",
+    "code": "FI002",
+    "description": "Queso cremoso de 250g",
+    "price": 350,
+    "stock": 45
+  },
+  {
+    "title": "Salame",
+    "category": "Fiambres",
+    "code": "FI003",
+    "description": "Salame de 200g",
+    "price": 400,
+    "stock": 30
+  },
+  {
+    "title": "Paleta de Cerdo",
+    "category": "Carnes",
+    "code": "CA003",
+    "description": "Paleta de cerdo de 1kg",
+    "price": 700,
+    "stock": 40
+  },
+  {
+    "title": "Aceitunas",
+    "category": "Almacén",
+    "code": "AL011",
+    "description": "Frasco de aceitunas verdes de 200g",
+    "price": 250,
+    "stock": 60
+  },
+  {
+    "title": "Salsa de Tomate",
+    "category": "Almacén",
+    "code": "AL012",
+    "description": "Salsa de tomate de 340g",
+    "price": 90,
+    "stock": 75
+  },
+  {
+    "title": "Huevos",
+    "category": "Almacén",
+    "code": "AL013",
+    "description": "Docena de huevos",
+    "price": 200,
+    "stock": 85
+  },
+  {
+    "title": "Carne de Cordero",
+    "category": "Carnes",
+    "code": "CA004",
+    "description": "Corte de cordero de 1kg",
+    "price": 1200,
+    "stock": 20
+  },
+  {
+    "title": "Bebida Energizante",
+    "category": "Bebidas",
+    "code": "BE005",
+    "description": "Lata de bebida energizante de 500ml",
+    "price": 200,
+    "stock": 50
+  },
+  {
+    "title": "Galletitas Saladas",
+    "category": "Snacks",
+    "code": "SN004",
+    "description": "Paquete de galletitas saladas de 100g",
+    "price": 120,
+    "stock": 70
+  },
+  {
+    "title": "Jugo de Naranja",
+    "category": "Bebidas",
+    "code": "BE006",
+    "description": "Botella de jugo de naranja de 1 litro",
+    "price": 150,
+    "stock": 80
+  },
+  {
+    "title": "Yerba Mate",
+    "category": "Almacén",
+    "code": "AL014",
+    "description": "Paquete de yerba mate de 1kg",
+    "price": 500,
+    "stock": 70
+  },
+  {
+    "title": "Cerveza Negra",
+    "category": "Bebidas",
+    "code": "BE007",
+    "description": "Botella de cerveza negra de 1 litro",
+    "price": 180,
+    "stock": 60
+  },
+  {
+    "title": "Tarta de Manzana",
+    "category": "Postres",
+    "code": "PO006",
+    "description": "Tarta de manzana de 500g",
+    "price": 300,
+    "stock": 40
+  },
+  {
+    "title": "Galletas de Chocolate",
+    "category": "Snacks",
+    "code": "SN005",
+    "description": "Paquete de galletas de chocolate de 200g",
+    "price": 200,
+    "stock": 50
+  },
+  {
+    "title": "Café Instantáneo",
+    "category": "Almacén",
+    "code": "AL015",
+    "description": "Frasco de café instantáneo de 100g",
+    "price": 300,
+    "stock": 60
+  },
+  {
+    "title": "Miel",
+    "category": "Almacén",
+    "code": "AL016",
+    "description": "Frasco de miel de 500g",
+    "price": 400,
+    "stock": 40
+  },
+  {
+    "title": "Mayonesa",
+    "category": "Almacén",
+    "code": "AL017",
+    "description": "Frasco de mayonesa de 500g",
+    "price": 150,
+    "stock": 75
+  },
+  {
+    "title": "Mostaza",
+    "category": "Almacén",
+    "code": "AL018",
+    "description": "Frasco de mostaza de 250g",
+    "price": 100,
+    "stock": 80
+  },
+  {
+    "title": "Ketchup",
+    "category": "Almacén",
+    "code": "AL019",
+    "description": "Frasco de ketchup de 400g",
+    "price": 120,
+    "stock": 70
+  },
+  {
+    "title": "Cereales",
+    "category": "Desayuno",
+    "code": "DE001",
+    "description": "Caja de cereales de 500g",
+    "price": 250,
+    "stock": 65
+  },
+  {
+    "title": "Mermelada de Frutilla",
+    "category": "Desayuno",
+    "code": "DE002",
+    "description": "Frasco de mermelada de frutilla de 400g",
+    "price": 180,
+    "stock": 50
+  },
+  {
+    "title": "Cacao en Polvo",
+    "category": "Desayuno",
+    "code": "DE003",
+    "description": "Paquete de cacao en polvo de 250g",
+    "price": 200,
+    "stock": 55
+  },
+  {
+    "title": "Barra de Cereal",
+    "category": "Desayuno",
+    "code": "DE004",
+    "description": "Paquete de barras de cereal (6 unidades)",
+    "price": 150,
+    "stock": 60
+  },
+  {
+    "title": "Galletas de Avena",
+    "category": "Desayuno",
+    "code": "DE005",
+    "description": "Paquete de galletas de avena de 200g",
+    "price": 140,
+    "stock": 75
+  },
+  {
+    "title": "Leche Descremada",
+    "category": "Lácteos",
+    "code": "LA005",
+    "description": "Leche descremada de 1 litro",
+    "price": 240,
+    "stock": 50
+  },
+  {
+    "title": "Queso Untable",
+    "category": "Lácteos",
+    "code": "LA006",
+    "description": "Queso untable de 200g",
+    "price": 200,
+    "stock": 45
+  },
+  {
+    "title": "Crema de Leche",
+    "category": "Lácteos",
+    "code": "LA007",
+    "description": "Pote de crema de leche de 200ml",
+    "price": 160,
+    "stock": 40
+  },
+  {
+    "title": "Chocolate en Barra",
+    "category": "Postres",
+    "code": "PO007",
+    "description": "Barra de chocolate de 100g",
+    "price": 250,
+    "stock": 35
+  },
+  {
+    "title": "Sopa Instantánea",
+    "category": "Almacén",
+    "code": "AL020",
+    "description": "Paquete de sopa instantánea de 75g",
+    "price": 70,
+    "stock": 90
+  },
+  {
+    "title": "Café Molido",
+    "category": "Almacén",
+    "code": "AL021",
+    "description": "Paquete de café molido de 250g",
+    "price": 400,
+    "stock": 40
+  },
+  {
+    "title": "Te Negro",
+    "category": "Almacén",
+    "code": "AL022",
+    "description": "Caja de té negro (20 saquitos)",
+    "price": 150,
+    "stock": 60
+  },
+  {
+    "title": "Manteca",
+    "category": "Lácteos",
+    "code": "LA008",
+    "description": "Paquete de manteca de 200g",
+    "price": 250,
+    "stock": 55
+  },
+  {
+    "title": "Cremoso Light",
+    "category": "Lácteos",
+    "code": "LA009",
+    "description": "Queso cremoso light de 250g",
+    "price": 300,
+    "stock": 45
+  },
+  {
+    "title": "Té Verde",
+    "category": "Almacén",
+    "code": "AL023",
+    "description": "Caja de té verde (20 saquitos)",
+    "price": 170,
+    "stock": 65
+  },
+  {
+    "title": "Gelatina",
+    "category": "Postres",
+    "code": "PO008",
+    "description": "Paquete de gelatina de 85g",
+    "price": 50,
+    "stock": 85
+  },
+  {
+    "title": "Batatas en Almíbar",
+    "category": "Postres",
+    "code": "PO009",
+    "description": "Lata de batatas en almíbar de 800g",
+    "price": 180,
+    "stock": 45
+  },
+  {
+    "title": "Arroz Integral",
+    "category": "Almacén",
+    "code": "AL024",
+    "description": "Paquete de arroz integral de 1kg",
+    "price": 120,
+    "stock": 70
+  },
+  {
+    "title": "Lentejas",
+    "category": "Almacén",
+    "code": "AL025",
+    "description": "Paquete de lentejas de 500g",
+    "price": 90,
+    "stock": 75
+  },
+  {
+    "title": "Choclo en Grano",
+    "category": "Almacén",
+    "code": "AL026",
+    "description": "Lata de choclo en grano de 340g",
+    "price": 80,
+    "stock": 60
+  },
+  {
+    "title": "Duraznos en Almíbar",
+    "category": "Postres",
+    "code": "PO010",
+    "description": "Lata de duraznos en almíbar de 820g",
+    "price": 200,
+    "stock": 50
+  },
+  {
+    "title": "Maní",
+    "category": "Snacks",
+    "code": "SN007",
+    "description": "Paquete de maní tostado de 200g",
+    "price": 150,
+    "stock": 80
+  },
+  {
+    "title": "Cerveza Rubia",
+    "category": "Bebidas",
+    "code": "BE008",
+    "description": "Botella de cerveza rubia de 1 litro",
+    "price": 170,
+    "stock": 55
+  },
+  {
+    "title": "Milanesas de Soja",
+    "category": "Comidas Preparadas",
+    "code": "CP005",
+    "description": "Paquete de milanesas de soja (6 unidades)",
+    "price": 300,
+    "stock": 40
+  },
+  {
+    "title": "Papas Noisette",
+    "category": "Congelados",
+    "code": "CO001",
+    "description": "Paquete de papas noisette de 1kg",
+    "price": 350,
+    "stock": 30
+  },
+  {
+    "title": "Hielo",
+    "category": "Congelados",
+    "code": "CO002",
+    "description": "Bolsa de hielo de 3kg",
+    "price": 100,
+    "stock": 90
+  },
+  {
+    "title": "Croquetas de Papa",
+    "category": "Congelados",
+    "code": "CO003",
+    "description": "Paquete de croquetas de papa de 1kg",
+    "price": 320,
+    "stock": 35
+  },
+  {
+    "title": "Verduras Congeladas",
+    "category": "Congelados",
+    "code": "CO004",
+    "description": "Paquete de verduras congeladas de 1kg",
+    "price": 300,
+    "stock": 45
+  },
+  {
+    "title": "Helado de Chocolate",
+    "category": "Postres",
+    "code": "PO011",
+    "description": "Pote de helado de chocolate de 1 litro",
+    "price": 450,
+    "stock": 20
+  },
+  {
+    "title": "Yogur Natural",
+    "category": "Lácteos",
+    "code": "LA010",
+    "description": "Pote de yogur natural de 200g",
+    "price": 100,
+    "stock": 50
   }
 ]

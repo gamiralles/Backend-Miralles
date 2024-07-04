@@ -39,20 +39,9 @@ socket.on("updateProducts", (products) => {
         <strong>Description:</strong> ${product.description}, 
         <strong>Price:</strong> ${product.price}, 
         <strong>Stock:</strong> ${product.stock}
-        <button class="deleteProduct" data-id="${product.id}">Borrar</button>
         `;
         productList.appendChild(listItem);
     });
 
-    document.querySelectorAll(".deleteProduct").forEach((button) => {
-        button.addEventListener("click", (event) => {
-            const productId = event.currentTarget.getAttribute("data-id");
-            
-            if (isValidObjectId(productId)) {
-                socket.emit("deleteProduct", productId);
-            } else {
-                console.error(`ID de producto no válido: ${productId}`);
-            }
-        });
-    });
+
 });

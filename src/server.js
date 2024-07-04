@@ -13,7 +13,7 @@ const app = express()
 
 const PORT = 5000;
 
-mongoose.connect(`mongodb+srv://DBshop:DBshopGM@dbshop.xeqnc7g.mongodb.net/?retryWrites=true&w=majority&appName=DBshop`)
+mongoose.connect() 
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => console.error('Error connecting to MongoDB:', err));
 

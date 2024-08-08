@@ -53,7 +53,7 @@ class ProductManager {
         return product;
     } catch (error) {
         console.log(`Error updating product: ${error}`);
-        throw error; // Asegúrate de lanzar el error para manejarlo adecuadamente
+        throw error;
     }
 }
 

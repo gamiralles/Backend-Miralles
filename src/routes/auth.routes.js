@@ -1,6 +1,8 @@
 import { Router } from "express";
 import authController from "../controller/authController.js";
 import passport from "passport";
+import authMiddleware from "../middlewares/auth.middleware.js";
+
 
 const router = Router();
 
@@ -20,6 +22,7 @@ router.post("/register", authController.register);
 router.get(
   "/current",
   passport.authenticate("current", { session: false }),
+  authMiddleware("admin"),
   authController.current
 );
 

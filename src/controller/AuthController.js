@@ -1,11 +1,13 @@
 import passport from "passport";
 import { generateToken } from "../utils/jwtFunction.js";
+import mailService from "../services/mail.service.js";
 
 class AuthController {
   async login(req, res) {
     console.log(req.user);
 
     const payload = {
+      id: req.user.id,
       email: req.user.email,
       role: req.user.role,
     };
@@ -38,6 +40,13 @@ class AuthController {
         if (!user) {
           return res.status(400).json({ message: info.message });
         }
+        
+        try {
+          await mailService.sendMail(user.email, "Bienvenido a nuestro sitio", user.firstName);
+        } catch (error) {
+          console.log(error);
+        }
+
         const payload = {
           email: user.email,
           role: user.role,

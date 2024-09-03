@@ -1,9 +1,13 @@
 import Cart from "../models/cart.model.js";
+import Product from "../models/product.model.js";
+import Ticket from "../models/ticket.model.js";
+import mailService from "../services/mail.service.js";
+import { userModel } from "../models/user.model.js";
 
 class CartManager {
-  async createCart(products) {
+  async createCart(userId, products = []) {
     try {
-      const newCart = new Cart({ products });
+      const newCart = new Cart({ user: userId, products });
       const savedCart = await newCart.save();
       return savedCart;
     } catch (error) {
@@ -112,17 +116,75 @@ class CartManager {
 
   async updateCartProducts(cid, products) {
     try {
-        const cart = await Cart.findById(cid);
+      const cart = await Cart.findById(cid);
 
-        if (!cart) {
-            console.error("Cart not found");
+      if (!cart) {
+        console.error("Cart not found");
+      }
+
+      cart.products = products;
+      const updatedCart = await cart.save();
+      return updatedCart;
+    } catch (error) {
+      console.error("Error updating cart products:", error);
+    }
+  }
+
+  async purchaseCart(cid, userId) {
+    try {
+      const cart = await Cart.findById(cid).populate("products.product");
+      if (!cart) {
+        throw new Error("Cart not found");
+      }
+
+      let totalAmount = 0;
+
+      for (const item of cart.products) {
+        const product = await Product.findById(item.product);
+
+        if (!product) {
+          throw new Error(`Producto ${item.product} no encontrado`);
         }
 
-        cart.products = products;
-        const updatedCart = await cart.save();
-        return updatedCart;
+        if (product.stock < item.quantity) {
+          throw new Error(
+            `Stock insuficiente para comprar ${item.quantity} unidades de ${product.title}`
+          );
+        }
+
+        product.stock -= item.quantity;
+        await product.save();
+
+        totalAmount += product.price * item.quantity;
+      }
+
+      const ticket = new Ticket({
+        code: `TICKETCOMPRA-${Date.now()}`,
+        purchaseDate: Date.now(),
+        amount: totalAmount,
+        purchaser: userId,
+        cart: cid,
+      });
+
+      await ticket.save();
+
+      cart.products = [];
+      await cart.save();
+
+      const user = await userModel.findById(userId);
+      if (user) {
+        await mailService.sendMailPurchase(
+          user.email,
+          "Confirmación de Compra",
+          user.firstName,
+          ticket.code
+        );
+      }
+
+      return ticket;
     } catch (error) {
-        console.error("Error updating cart products:", error);
+      console.error("Error al realizar la compra", error);
+      throw error;
     }
   }
 }

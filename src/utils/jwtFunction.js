@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
+import { config } from "../config/config.js";
 
-export const JWT_SECRET = "sicre";
+export const JWT_SECRET = config.JWT_SECRET;
 
 export function generateToken(payload) {
     const token = jwt.sign(payload, JWT_SECRET, {

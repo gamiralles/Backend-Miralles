@@ -101,7 +101,8 @@ function passportFunction() {
       },
       async (payload, done) => {
         try {
-          done(null, payload);
+          const user = await userModel.findById(payload.id);
+          done(null, payload, user);
         } catch (error) {
           return done(error);
         }

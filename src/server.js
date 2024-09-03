@@ -11,13 +11,14 @@ import passport from "passport";
 import authRoute from "./routes/auth.routes.js";
 import cookieParser from "cookie-parser";
 import { passportFunction } from "./config/passport.config.js";
+import { config } from "./config/config.js";
 
 const app = express();
 
 const PORT = 5000;
 
 mongoose
-  .connect("mongodb://localhost:27017/")
+  .connect(config.MONGODB_URI)
   .then(() => console.log("DB Connected"))
   .catch((err) => console.error("Error connecting to DB:", err));
 
@@ -47,8 +48,8 @@ app.set("views", "src/views");
 
 app.use("/api/products", productsRoute);
 app.use("/api/carts", cartsRoute);
-app.use("/", viewsRoute);
 app.use("/api/auth", authRoute);
+app.use("/", viewsRoute);
 
 app.listen(PORT, () => {
   console.log(`server up http://localhost:${PORT}`);

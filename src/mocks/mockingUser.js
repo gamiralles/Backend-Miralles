@@ -1,10 +1,10 @@
 import { faker } from '@faker-js/faker';
-import bcrypt from 'bcrypt';
+import bcryptjs  from 'bcryptjs';
 
 const generateUsers = (count = 50) => {
     const users = [];
     for (let i = 0; i < count; i++) {
-        const passwordHash = bcrypt.hashSync('coder123', 10);
+        const passwordHash = bcryptjs.hashSync('coder123', 10);
         users.push({
             firstName: faker.person.firstName(),
             lastName: faker.person.lastName(),

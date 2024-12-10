@@ -14,6 +14,8 @@ import { passportFunction } from "./config/passport.config.js";
 import { config } from "./config/config.js";
 import logger from "./routes/logger.routes.js";
 import mocksRoute from "./routes/mocking.routes.js";
+import configureSwagger from "./docs/swagger.js";
+import userRoutes from "./routes/user.routes.js";
 
 const app = express();
 
@@ -45,12 +47,15 @@ app.engine(
   })
 );
 
+configureSwagger(app);
+
 app.set("view engine", "hbs");
 app.set("views", "src/views");
 
 app.use("/api/products", productsRoute);
 app.use("/api/carts", cartsRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/users", userRoutes);
 app.use("/", viewsRoute);
 app.use("/api/mocks", mocksRoute);
 app.use("/api/logger", logger);
@@ -58,3 +63,5 @@ app.use("/api/logger", logger);
 app.listen(PORT, () => {
   console.log(`server up http://localhost:${PORT}`);
 });
+
+export default app;
